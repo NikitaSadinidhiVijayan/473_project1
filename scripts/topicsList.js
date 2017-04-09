@@ -21,7 +21,7 @@
         // Create a new instance of a row, using the coffee order info
         var rowElement = new Row(TopicSubmission, this.db);
 
-        // Add the new row instance's $element property to the checklist
+        // Add the new row instance's $element property
         this.$element.append(rowElement.$element);
     };
 
@@ -30,25 +30,11 @@
     };
 
     function Row(TopicSubmission, db) {
-        // var $div = $('<div></div>', {
-        //     'course-topic-list': 'topicsList',
-        //     'class': 'topicList'
-        // });
-        // var $label = $('<label></label>');
-        //
-        // var $topic = $('<input></input>', {
-        //     value: TopicSubmission.topic
-        // });
-        //
-        //
-        //
-        // $label.append($topic);
-        // $div.append($label);
-        //
-        // this.$element = $div;
+
         var $div = $('<div></div>', {
-            'post-topic':'topiclist',
+            'post-topic': 'topiclist',
             'class': 'list-group-item'
+
         });
 
         //Create labels
@@ -70,7 +56,7 @@
 
         var $space = $('<span> &emsp;&emsp;&emsp;</span>');
 
-        var $dislikeBtn =$('<button type="button" class="btn btn-danger">Dislike</button>');
+        var $dislikeBtn = $('<button type="button" class="btn btn-danger">Dislike</button>');
 
         //Create new id for the like/dislike buttons
         var newLikeButtonID = TopicSubmission.topic.replace(/[^a-z0-9\s]/gi, '');
@@ -88,14 +74,46 @@
         $(document).on('click', '#' + $($likeBtn).attr('id'), function() {
             var obj;
             obj = db.get(TopicSubmission.topic);
+            // var modal_pop = true;
+            $('#myModal').modal('show');
+            // write a code to check if the entered email_id already in DB
+            $('#emailsubmit').on('click', function() {
+                var email = $('#sender-name').val();
+                console.log(obj);
+                console.log(obj.email.length);
+                if(obj.email.length != 0){
+                  var test = obj.email.includes(email);
+                }
+                //var test = obj.email.includes(email);
+                if (test) {
+                    alert("email already exist");
+                    // var message= "";
+                    // message = emailAddress + ' is not an authorized email address!';
+                    // event.target.setCustomValidity(message);
+                    console.log(true);
+                } else {
+                    obj.email.push(email);
+                    console.log(TopicSubmission.topic);
+                    db.remove(TopicSubmission.topic);
 
-            db.remove(TopicSubmission.topic);
+                    obj.likes = parseInt(obj.likes) + 1;
 
-            obj.likes = parseInt(obj.likes) + 1;
+                    $likeLabel.text(obj.likes);
 
-            $likeLabel.text(obj.likes);
+                    db.add(obj);
 
-            db.add(obj);
+                    console.log(false);
+                }
+
+            })
+
+            //db.remove(TopicSubmission.topic);
+
+            //obj.likes = parseInt(obj.likes) + 1;
+
+            //$likeLabel.text(obj.likes);
+
+            //db.add(obj);
 
             /* Experimental
                         $.ajax({

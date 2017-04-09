@@ -19,6 +19,7 @@
 
                 var data = {};
                 $(this).serializeArray().forEach(function(item) {
+                  
                     data[item.name] = item.value;
                     console.log(item.name + ' is ' + item.value);
                 });
@@ -26,6 +27,14 @@
                     this.reset();
                     this.elements[0].focus();
                 }.bind(this));
+            });
+        };
+        FormHandler.prototype.addClickHandler = function(fn) {
+            console.log('Setting submit handler for form');
+            this.$formElement.on('click', "a", function(event) {
+                event.preventDefault();
+
+
             });
         };
     };

@@ -31,22 +31,6 @@
     };
 
     RemoteDB.prototype.get = function(key) {
-        // var obj = {}; //create empty object
-        // for (var key in this.data) { //iterate through each key in obj
-        //     var value = this.data[key]; //value = key of obj
-        //
-        //     if (value === course) { //if value === course
-        //         obj[key] = value; //add values to obj
-        //         //console.log('course: ' + value +' topic: ' + key);
-        //     }
-        // }
-        // //return obj; //return obj object
-        // return $.get(this.serverUrl + '/' + course, function(serverResponse) {
-        //   if (cb) {
-        //     console.log(serverResponse);
-        //     cb(serverResponse);
-        //   }
-        // });
 
         var obj;
         $.ajax({
@@ -58,6 +42,26 @@
             success: function(data) {
                 $(data).each(function(index, value) {
                     if (this.id == key) {
+                        obj = value;
+                    }
+                });
+            }
+        });
+
+        return obj;
+    };
+    RemoteDB.prototype.getCourse = function(course) {
+
+        var obj;
+        $.ajax({
+            url: this.serverUrl,
+            dataType: 'json',
+            type: 'get',
+            cache: false,
+            async: false,
+            success: function(data) {
+                $(data).each(function(index, value) {
+                    if (this.course == course) {
                         obj = value;
                     }
                 });

@@ -28,9 +28,24 @@
         data.id = data.topic;
         data.likes = 0;
         data.dislikes = 0;
+        data.email = '[]';
+        console.log(data);
         return remoteDB.add.call(remoteDB, data)
             .then(function() {
                 topicsList.addRow.call(topicsList, data);
             });
+    });
+    formHandler.addClickHandler(function(course){
+      //this function is to display the courses by topic
+      return remoteDB.getCourse.call(course)
+        .then(function(){
+          //call topiclist function to display
+          //topicsList.addRow.call(topicsList, data);
+          $.getJSON(SERVER_URL, function(data) {
+              $(data).each(function(key, value) {
+                  topicsList.addRow(value);
+              });
+          });
+        })
     });
 })(window);

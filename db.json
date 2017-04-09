@@ -1,39 +1,58 @@
 {
   "TopicSubmissions": [
     {
-      "course": "cpsc473",
-      "topic": "dsfsdf",
-      "id": "dsfsdf",
-      "likes": "21",
-      "dislikes": "12"
-    },
-    {
       "course": "cpsc121",
       "topic": "json",
       "id": "json",
-      "likes": "17",
-      "dislikes": "6"
+      "likes": "21",
+      "dislikes": "6",
+      "email": [
+        "s@gmail.com",
+        "n@gmail.com",
+        "sv.nikita@gmail.com"
+      ]
     },
     {
       "course": "cpsc473",
-      "topic": "ajax",
-      "id": "ajax",
-      "likes": "32",
-      "dislikes": "9"
+      "topic": "dsfsdf",
+      "id": "dsfsdf",
+      "likes": "29",
+      "dislikes": "12",
+      "email": [
+        "s@gmail.com",
+        "n@gmail.com",
+        "h@gmail.com",
+        "he@gmail.com",
+        "sv.nikita",
+        "nikita@gmail.com"
+      ]
     },
     {
-      "course": "cpsc473",
-      "topic": "jsdjfbsd",
-      "id": "jsdjfbsd",
-      "likes": "23",
-      "dislikes": "21"
+      "course": "cpsc131",
+      "topic": "compter",
+      "id": "compter",
+      "likes": "1",
+      "dislikes": "0",
+      "email": [
+        "",
+        "sv.nikita"
+      ]
     },
     {
-      "course": "cpsc121",
-      "topic": "sdfsdfsdf",
-      "id": "sdfsdfsdf",
-      "likes": "3",
-      "dislikes": "5"
+      "course": "cpsc120",
+      "topic": "test",
+      "id": "test",
+      "likes": "0",
+      "dislikes": "0",
+      "email": []
+    },
+    {
+      "course": "cpsc120",
+      "topic": "testagain",
+      "id": "testagain",
+      "likes": "0",
+      "dislikes": "0",
+      "email": "[]"
     }
   ]
 }

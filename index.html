@@ -12,66 +12,6 @@
 </head>
 
 <body class="container">
-    <!--Login Modal BEGIN-->
-    <!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="loginModalLabel">Login to your account</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="topicField">Username</label>
-                        <input class="form-control" name="Username" id="username" value="" placeholder="Username" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="topicField">Password</label>
-                        <input class="form-control" name="Password" id="password" value="" placeholder="Password" required />
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" id="saveAchievement" class="btn btn-primary">Login</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!--Login Modal END-->
-    <!--Post Topic Modal BEGIN-->
-    <!-- <div class="modal fade" id="postTopicModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="postTopicModalLabel">Post a topic</h4>
-                </div>
-                <div class="modal-body"> -->
-                    <!-- <form post-a-topic="form">
-                        <div class="form-group">
-                            <label for="course">Course</label>
-                            <select id="course" class="form-control" name="course">
-                        <option value="cpsc473">CPSC 473</option>
-                        <option value="cpsc120">CPSC 120</option>
-                        <option value="cpsc121">CPSC 121</option>
-                        <option value="cpsc131">CPSC 131</option>
-                      </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="topicField">Topic</label>
-                            <input class="form-control" name="topic" id="topicField" value="" placeholder="Enter topic here" required autofocus/>
-                        </div>
-
-                        <button type="submit" id="submitBtn" class="btn btn-default"> Submit</button>
-                        <button type="reset" id="resetBtn" class="btn btn-default"> Reset</button>
-                    </form> -->
-                <!-- </div>
-
-            </div>
-        </div>
-    </div> -->
-    <!--Post Topic Modal END-->
 
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -97,19 +37,24 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="col-sm-2 sidenav">
+
+            <ul id="courseName" name="course">
+                <a href="#">
+                    <li> CPSC 120 </li>
+                </a>
+                <a href="#">
+                    <li> CPSC 473 </li>
+                </a>
+            </ul>
+        </div>
+    </div>
 
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <!-- <div class="form-group">
-                    <label class="pull-left" for="courseName">Courses</label>
-                    <select id="courseName" class="form-control" name="course">
-                         <option value="cpsc473">CPSC 473</option>
-                         <option value="cpsc120">CPSC 120</option>
-                         <option value="cpsc121">CPSC 121</option>
-                         <option value="cpsc131">CPSC 131</option>
-                       </select>
-                </div> -->
+
             </div>
             <div class="col-sm-8 text-left">
                 <center>
@@ -117,11 +62,11 @@
                         <div class="form-group">
                             <label for="course">Course</label>
                             <select id="course" class="form-control" name="course">
-                      <option value="cpsc473">CPSC 473</option>
-                      <option value="cpsc120">CPSC 120</option>
-                      <option value="cpsc121">CPSC 121</option>
-                      <option value="cpsc131">CPSC 131</option>
-                    </select>
+                                <option value="cpsc120">CPSC 473</option>
+                                <option value="cpsc120">CPSC 120</option>
+                                <option value="cpsc121">CPSC 121</option>
+                                <option value="cpsc131">CPSC 131</option>
+                            </select>
                         </div>
                         <!-- <div class="form-group">
                             <label for="courseField">Course</label>
@@ -151,6 +96,33 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!--modal starts here -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <form >
+                        <div class="form-group">
+                            <label for="sender-name" class="form-control-label">Email:</label>
+                            <input type="text" class="form-control" id="sender-name">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="emailclose" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="emailsubmit" class="btn btn-primary">Submit</button>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
     </div>
 
     <script src="scripts/topicsList.js" charset="utf-8"></script>
